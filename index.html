@@ -31,8 +31,8 @@
     <button onclick="updateConsentDenied();">Update Consent: Denied</button>
     <button onclick="updateConsentGranted();">Update Consent: Granted</button>
 
-    <p>uetqb.uetConfig.consent.enabled:</p>
-    <p id="uetq.uetConfig.consent.enabled"></p>
+    <p>uetqb.uetConfig.consent:</p>
+    <p id="uetq.uetConfig.consent"></p>
 
     <script>
         function defaultConsentDenied(){
@@ -65,7 +65,7 @@
         }
 
         function refreshUetqConsentStatus() {
-            document.getElementById("uetq.uetConfig.consent.enabled").innerText = uetq.uetConfig.consent.enabled;
+            document.getElementById("uetq.uetConfig.consent").innerText = uetq.uetConfig.consent;
         }
     </script>
 
