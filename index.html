@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GTM Consent Mode Testing</title>
+  <style>
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  </style>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KQ5HNXZD');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQ5HNXZD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <h1>GTM - UET - Consent Mode Testing</h1>
+    <p>Click below buttons to trigger different consent scenarios:</p>
+
+    <button onclick="defaultConsentDenied();">Set Default Consent: Denied</button>
+    <button onclick="defaultConsentGranted();">Set Default Consent: Granted</button>
+    <button onclick="updateConsentDenied();">Update Consent: Denied</button>
+    <button onclick="updateConsentDenied();">Update Consent: Granted</button>
+
+    <p>uetqb.uetConfig.consent.enabled:</p>
+    <p id="uetq.uetConfig.consent.enabled"></p>
+
+    <script>
+        function defaultConsentDenied(){
+            window.uetq = window.uetq || [];
+            window.uetq.push('consent', 'default', {
+                'ad_storage': 'denied'
+                });
+            refreshUetqConsentStatus();
+        }
+        function defaultConsentGranted(){
+            window.uetq = window.uetq || [];
+            window.uetq.push('consent', 'default', {
+                'ad_storage': 'granted'
+                });
+            refreshUetqConsentStatus();
+        }
+        function updateConsentDenied(){
+            window.uetq = window.uetq || [];
+            window.uetq.push('consent', 'update', {
+                'ad_storage': 'denied'
+            });
+            refreshUetqConsentStatus();
+        }
+        function updateConsentGranted(){
+            window.uetq = window.uetq || [];
+            window.uetq.push('consent', 'update', {
+                'ad_storage': 'granted'
+            });
+            refreshUetqConsentStatus();
+        }
+
+        function refreshUetqConsentStatus() {
+            document.getElementById("uetq.uetConfig.consent.enabled").innerText = uetq.uetConfig.consent.enabled;
+        }
+    </script>
+
+</body>
+</html>
