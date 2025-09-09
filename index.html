@@ -31,10 +31,11 @@
     <button onclick="updateConsentDenied();">Update Consent: Denied</button>
     <button onclick="updateConsentGranted();">Update Consent: Granted</button>
 
-    <p>uetqb.uetConfig.consent:</p>
+    <p>uetq.uetConfig.consent:</p>
     <p id="uetq.uetConfig.consent"></p>
 
     <script>
+        document.getElementById("uetq.uetConfig.consent").innerText = uetq.uetConfig.consent;
         function defaultConsentDenied(){
             window.uetq = window.uetq || [];
             window.uetq.push('consent', 'default', {
