@@ -25,12 +25,13 @@
     <!-- End Google Tag Manager (noscript) -->
     <h1>GTM - UET - Consent Mode Testing</h1>
     <p>Click below buttons to trigger different consent scenarios:</p>
-
+    <p>UET</p>
     <button onclick="defaultConsentDenied();">Set Default Consent: Denied</button>
     <button onclick="defaultConsentGranted();">Set Default Consent: Granted</button>
     <button onclick="updateConsentDenied();">Update Consent: Denied</button>
     <button onclick="updateConsentGranted();">Update Consent: Granted</button>
-
+    <p>GTM Consent API</p>
+    <button onclick="updateGTMConsentGranted();">Update GTM Consent: Granted</button>
     <p>uetq.uetConfig.consent:</p>
     <p id="uetq.uetConfig.consent"></p>
 
@@ -62,6 +63,10 @@
             window.uetq.push('consent', 'update', {
                 'ad_storage': 'granted'
             });
+            
+            refreshUetqConsentStatus();
+        }
+        function updateGTMConsentGranted(){
             dataLayer.push({'event': 'consent_granted'}); 
             refreshUetqConsentStatus();
         }
