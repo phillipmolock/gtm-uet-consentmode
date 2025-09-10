@@ -62,6 +62,7 @@
             window.uetq.push('consent', 'update', {
                 'ad_storage': 'granted'
             });
+            dataLayer.push({'event': 'consent_granted'}); 
             refreshUetqConsentStatus();
         }
 
