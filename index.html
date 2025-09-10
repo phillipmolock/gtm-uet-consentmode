@@ -36,7 +36,7 @@
     <p id="uetq.uetConfig.consent"></p>
 
     <script>
-        document.getElementById("uetq.uetConfig.consent").innerText = JSON.stringify(uetq.uetConfig.consent);
+        document.getElementById("uetq.uetConfig.consent").innerText = JSON.stringify(uetq.uetConfig.consent || {});
         function defaultConsentDenied(){
             window.uetq = window.uetq || [];
             window.uetq.push('consent', 'default', {
